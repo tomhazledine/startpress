@@ -12,7 +12,7 @@
 // 11. Remove WP version # from head
 // 12. featured image support
 // 13. Allow svg as featured image
-
+// 14. HTML5 search form
 
 // 01. Declare Custom Menus
   register_nav_menus( array(
@@ -99,5 +99,8 @@
     return $mimes;
   }
   add_filter( 'upload_mimes', 'cc_mime_types' );
+  
+// 14. HTML5 search form
+  add_theme_support( 'html5', array( 'search-form' ) );
 
 ?>
