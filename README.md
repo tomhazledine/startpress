@@ -1,4 +1,4 @@
-# The amazing DWM all singing all dancing gulpfile starter kit .com
+# The amazing DWM all singing all dancing gulpfile starter kit .com [Wordpress Theme edition]
 
 All changes to go through:
 
