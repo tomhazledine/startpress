@@ -53,7 +53,7 @@ linters:
   Indentation:
     enabled: true
     character: space # or 'tab'
-    width: 4
+    width: 2
 
   LeadingZero:
     enabled: true

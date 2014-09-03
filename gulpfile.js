@@ -107,7 +107,7 @@ gulp.task('fonts', function() {
 
 // Livereload
 gulp.task('listen', function(next) {
-    server.listen(35729, function(err) {
+    server.listen(35728, function(err) {
         if (err) return console.log;
         next();
     });
@@ -130,4 +130,4 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['sass', 'scss-lint', 'scripts', 'images', 'fonts', 'iconfont', 'listen', 'watch']);
+gulp.task('default', ['sass', 'scripts', 'images', 'fonts', 'iconfont', 'listen', 'watch']);
