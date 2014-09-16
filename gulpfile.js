@@ -124,7 +124,7 @@ gulp.task('watch', function() {
     gulp.watch('uncompressed/fonts/**', ['fonts']);
     gulp.watch('uncompressed/icons/**', ['iconfont']);
 
-    gulp.watch('*.html').on('change', function(file) {
+    gulp.watch(['*.html','*.php']).on('change', function(file) {
         livereload(server).changed(file.path);
     });
 });
