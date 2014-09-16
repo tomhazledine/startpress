@@ -119,7 +119,7 @@ gulp.task('watch', function() {
     gulp.watch('uncompressed/js/jquery/*.js', ['scripts']);
     gulp.watch('uncompressed/js/vendor/*.js', ['scripts']);
     gulp.watch('uncompressed/js/custom/*.js', ['scripts']);
-    gulp.watch('uncompressed/scss/*.scss', ['sass','scss-lint']);
+    gulp.watch('uncompressed/scss/*.scss', ['sass']);
     gulp.watch('uncompressed/images/**', ['images']);
     gulp.watch('uncompressed/fonts/**', ['fonts']);
     gulp.watch('uncompressed/icons/**', ['iconfont']);
