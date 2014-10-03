@@ -32,7 +32,7 @@
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/main.css">
 
   <!-- Modernizr -->
-  <script src="<?php echo get_template_directory_uri(); ?>/uncompressed/js/vendor/modernizr-2.6.2.min.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/assets/js/static/modernizr-2.6.2.min.js"></script>
 
   <!-- Google+ -->
 
@@ -40,8 +40,8 @@
     <!-- Media Queries support for older versions of IE etc. -->
     <!-- HTML5 shiv -->
       <!--[if lt IE 9]>
-      <script src="<?php echo get_template_directory_uri(); ?>/uncompressed/js/static/respond.min.js" type="text/javascript"></script>
-      <script src="<?php echo get_template_directory_uri(); ?>/uncompressed/js/static/html5.js" type="text/javascript"></script>
+      <script src="<?php echo get_template_directory_uri(); ?>/assets/js/static/respond.min.js" type="text/javascript"></script>
+      <script src="<?php echo get_template_directory_uri(); ?>/assets/js/static/html5.js" type="text/javascript"></script>
       <![endif]-->
 
   <?php wp_head(); ?>
