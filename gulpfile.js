@@ -62,17 +62,13 @@ gulp.task('scripts', function() {
     .pipe(livereload(server));
 });
 
+// Minify and transfer static JS files
 gulp.task('staticjs', function() {
     return gulp.src(['uncompressed/js/static/*.js'])
     .pipe(plumber({
       errorHandler: onError
     }))
-    //.pipe(concat('app.js'))
-    //.pipe(size({title: 'js'}))
-    //.pipe(gulp.dest('assets/js/static'))
-    //.pipe(rename('app.min.js'))
     .pipe(uglify())
-    //.pipe(size({title: 'js.min'}))
     .pipe(gulp.dest('assets/js/static'))
     .pipe(livereload(server));
 });
