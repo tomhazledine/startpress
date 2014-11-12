@@ -3,11 +3,11 @@
 // Icon Font
 @font-face {
   font-family: 'iconFont';
-  src:url('/assets/fonts/icons/icons.eot');
-  src:url('/assets/fonts/icons/icons.eot?#iefix') format('embedded-opentype'),
-    url('/assets/fonts/icons/icons.woff') format('woff'),
-    url('/assets/fonts/icons/icons.ttf') format('truetype'),
-    url('/assets/fonts/icons/icons.svg#icons') format('svg');
+  src:url('../fonts/icons/icons.eot');
+  src:url('../fonts/icons/icons.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/icons/icons.woff') format('woff'),
+      url('../fonts/icons/icons.ttf') format('truetype'),
+      url('../fonts/icons/icons.svg#icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
