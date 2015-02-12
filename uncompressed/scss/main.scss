@@ -1,36 +1,7 @@
 //------------------------------------//
 
-// Default Wordpress Starter Kit
 // * Master SASS file
 // * Architecture uses ITCSS methodology
-
-//------------------------------------//
-
-// CONTENTS
-
-// 01. Settings
-// * Colour variables
-// * Fonts
-// * Breakpoints
-
-// 02. Tools
-// * Clearfix Placeholder
-
-// 03. Generic
-// * Normalize [disabled]
-// * Reset
-
-// 04.Base
-// * Box-sizing
-// * Global font size
-
-// 05.Objects
-
-// 06.Components
-
-// 07.Trumps
-// * Hiding things visually
-// * Clearfix Class
 
 //------------------------------------//
 
@@ -48,7 +19,8 @@
 @import "generic.reset";
 
 // 04. BASE
-@import "base";
+@import "base.general";
+@import "base.theme";
 
 // 05. OBJECTS
 
