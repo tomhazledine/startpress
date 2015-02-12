@@ -3,7 +3,7 @@
   <div class="footerMenu clearfix">
     <?php wp_nav_menu(array(
       'theme_location' => 'footer_menu',
-      'menu_class' => 'foot-nav clearfix'
+      'menu_class' => 'footNav clearfix'
     )); ?>
   </div>
 

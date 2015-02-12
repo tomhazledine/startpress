@@ -15,11 +15,17 @@ Run `npm install` to set-up the Gulp environment.
 
 ## Usage
 
+Run `gulp staticjs` to set up static javascript assets.
+
 Run `gulp` to activate the Gulp task.
 
 There are also a few standalone commands that can be run:
 
 `gulp jslint` will run all javascript in the "js/custom" folder through a JS linter.
+
+## Modules
+
+* Events
 
 ## Credits
 
