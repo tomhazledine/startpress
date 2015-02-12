@@ -25,7 +25,7 @@
 			'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
 			'has_archive'   => true,
 		);
-	register_post_type( 'event', $args );
+	register_post_type( 'events', $args );
 	}
 	add_action( 'init', 'eventPost' );
 	

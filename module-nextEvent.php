@@ -68,6 +68,6 @@ if($eventsFeed_posts->have_posts()) :
     endwhile;
 else: // Shown if no event posts exist ?>
 
-    <h3>No Events</h3>
+    <h3>No Upcoming Events</h3>
 
 <?php endif; wp_reset_postdata(); ?>
