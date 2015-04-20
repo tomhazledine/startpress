@@ -6,7 +6,7 @@
         <a href="<?=get_site_url();?>/" title="<?php bloginfo('name'); ?>" rel="home">
             <div class="siteLogo"></div>
             <h3><?php bloginfo('name'); ?></h3>
-            <p class="tagline">Luxury properties on, by or near a beach</p>
+            <p class="tagline"><?php bloginfo('description'); ?></p>
         </a>
     </div>
 
