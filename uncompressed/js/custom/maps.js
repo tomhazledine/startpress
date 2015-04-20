@@ -1,11 +1,8 @@
 // 08. Maps
 var mapBox = $('#mapCanvas');
-var mapZoomRaw = parseInt($('.mapZoom').text());
-var mapZoom = mapZoomRaw;
-var mapLatRaw = parseFloat($('.propMapLat').text());
-var mapLngRaw = parseFloat($('.propMapLng').text());
-var mapLat = mapLatRaw;
-var mapLng = mapLngRaw;
+var mapZoom = parseInt($('.mapZoom').text());
+var mapLat = parseFloat($('.propMapLat').text());
+var mapLng = parseFloat($('.propMapLng').text());
 var mapOffsetXRaw = parseFloat($('.propMapLatOffset').text());
 var mapOffsetYRaw = parseFloat($('.propMapLngOffset').text());
 // var customMarkerIcon = '/wp-content/themes/penvale/assets/images/pawIcon.png';
