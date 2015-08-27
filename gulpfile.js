@@ -13,17 +13,16 @@ var cache        = require('gulp-cache');
 var scsslint     = require('gulp-scss-lint');
 var livereload   = require('gulp-livereload');
 var jshint       = require('gulp-jshint');
-var iconfont     = require('gulp-iconfont');
-var iconfontCss  = require('gulp-iconfont-css');
 var size         = require('gulp-size');
 var lr           = require('tiny-lr');
 var gutil        = require('gulp-util');
 var plumber      = require('gulp-plumber');
 var server       = lr();
+var svgSprite    = require('gulp-svg-sprite');
 
 // This will handle our errors
 var onError = function (err) {
-  gutil.log(gutil.colors.red(err));
+    gutil.log(gutil.colors.red(err));
 };
 
 // Compile Our Sass
@@ -42,7 +41,7 @@ gulp.task('sass', function() {
 
 // Lets lint our CSS
 gulp.task('scss-lint', function() {
-  gulp.src('uncompressed/scss/*.scss')
+    gulp.src('uncompressed/scss/*.scss')
     .pipe(scsslint({'config': 'defaultLint.yml'}));
 });
 
@@ -50,7 +49,7 @@ gulp.task('scss-lint', function() {
 gulp.task('scripts', function() {
     return gulp.src(['uncompressed/js/jquery/jquery.js','uncompressed/js/vendor/*.js','uncompressed/js/custom/*.js'])
     .pipe(plumber({
-      errorHandler: onError
+        errorHandler: onError
     }))
     .pipe(concat('app.js'))
     .pipe(size({title: 'js'}))
@@ -66,54 +65,52 @@ gulp.task('scripts', function() {
 gulp.task('staticjs', function() {
     return gulp.src(['uncompressed/js/static/*.js'])
     .pipe(plumber({
-      errorHandler: onError
+        errorHandler: onError
     }))
     .pipe(uglify())
     .pipe(gulp.dest('assets/js/static'))
     .pipe(livereload(server));
 });
 
-// Icon Font
-var fontName = 'icons';
-
-// Create icon fonts from SVG
-gulp.task('iconfont', function(){
-  gulp.src(['uncompressed/icons/*.svg'])
-    .pipe(iconfontCss({
-      fontName: fontName,
-      //path: 'app/assets/css/templates/_icons.scss',
-      targetPath: '../../scss/_icons.scss',
-      fontPath: 'uncompressed/fonts/icons/'
-    }))
-    .pipe(iconfont({
-      fontName: fontName,
-      appendCodepoints:true
-     }))
-    .on('codepoints', function(codepoints, options) {
-        // CSS templating, e.g.
-        console.log(codepoints, options);
-      })
-    .pipe(gulp.dest('uncompressed/fonts/icons/'));
-});
-
 gulp.task('jslint', function() {
-return gulp.src('uncompressed/js/custom/*.js')
+    return gulp.src('uncompressed/js/custom/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
 // Set up image minification
 gulp.task('images', function() {
-  return gulp.src('uncompressed/images/**')
-  .pipe(cache(imagemin({ optimizationLevel: 9, progressive: true, interlaced: true })))
-  .pipe(gulp.dest('assets/images'))
-  .pipe(livereload(server));
+    return gulp.src('uncompressed/images/**')
+    .pipe(cache(imagemin({ optimizationLevel: 9, progressive: true, interlaced: true })))
+    .pipe(gulp.dest('assets/images'))
+    .pipe(livereload(server));
 });
 
 // Fonts
 gulp.task('fonts', function() {
     return gulp.src('uncompressed/fonts/**')
     .pipe(gulp.dest('assets/fonts/'));
+});
+
+// SVG Sprite
+var svgConfig = {
+    shape : {
+        // dimension : { // Set maximum dimensions
+        //     maxWidth : 32,
+        //     maxHeight : 32
+        // },
+        dest : 'intermediate' // Keep the intermediate files
+    },
+    mode : {
+        bust : true,
+        sprite : "sprite.<mode>.svg",
+        symbol : true
+    }
+};
+gulp.task('svg',function() {
+    gulp.src('uncompressed/icons/**/*.svg')
+    .pipe(svgSprite(svgConfig))
+    .pipe(gulp.dest('assets/icons'));
 });
 
 // Livereload
@@ -134,7 +131,7 @@ gulp.task('watch', function() {
     gulp.watch('uncompressed/scss/*.scss', ['sass']);
     gulp.watch('uncompressed/images/**', ['images']);
     gulp.watch('uncompressed/fonts/**', ['fonts']);
-    gulp.watch('uncompressed/icons/**', ['iconfont']);
+    gulp.watch('uncompressed/icons/**/*.svg', ['svg']);
 
     gulp.watch(['*.html','*.php']).on('change', function(file) {
         livereload(server).changed(file.path);
@@ -142,4 +139,4 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['sass', 'scripts', 'images', 'fonts', 'iconfont', 'listen', 'watch']);
+gulp.task('default', ['sass', 'scripts', 'listen', 'watch']);

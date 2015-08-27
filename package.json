@@ -17,8 +17,6 @@
     "gulp-autoprefixer": "0.0.8",
     "gulp-cache": "^0.2.0",
     "gulp-concat": "^2.3.4",
-    "gulp-iconfont": "^0.1.1",
-    "gulp-iconfont-css": "0.0.9",
     "gulp-imagemin": "^0.6.2",
     "gulp-jshint": "^1.8.3",
     "gulp-livereload": "^2.1.0",
@@ -28,8 +26,10 @@
     "gulp-sass": "^0.7.2",
     "gulp-scss-lint": "^0.1.2",
     "gulp-size": "^1.0.0",
+    "gulp-svg-sprite": "^1.1.2",
     "gulp-uglify": "^0.3.1",
     "gulp-util": "^3.0.0",
-    "tiny-lr": "0.0.9"
+    "tiny-lr": "0.0.9",
+    "vinyl": "^0.4.6"
   }
 }
