@@ -1,6 +1,36 @@
 <?php 
 // Theme-specific functions
 
+// Print Pre
+function print_pre($stuffToPrint){
+  echo '<pre style="
+    background:#ededed;
+    color:#444;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:10px;
+    padding:10px;
+    margin:10px;
+  ">';
+  var_dump($stuffToPrint);
+  echo '</pre>';
+}
+
+// Echo Pre
+function echo_pre($stuffToEcho){
+  echo '<pre style="
+    background:#ededed;
+    color:#444;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:10px;
+    padding:10px;
+    margin:10px;
+  ">';
+  echo $stuffToEcho;
+  echo '</pre>';
+}
+
 // Declare Custom Menus
 register_nav_menus( array(
   'header_menu' => 'Header Menu',
